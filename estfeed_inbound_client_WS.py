@@ -57,7 +57,7 @@ def upload_file():
 
             file.save(file_full_path)
 
-            send_report_email("New file recieved", "Recived file is attached, raw data: {}".format(raw_data), ["kristjan.vilgo@elering.ee"],[file_full_path])
+            send_report_email("New file recieved", "Recived file is attached, raw data: {}".format(raw_data), ["kristjan.vilgo@elering.ee", "georg.rute@elering.ee"],[file_full_path])
 
 
             return '''File recieved: {}'''.format(filename)
