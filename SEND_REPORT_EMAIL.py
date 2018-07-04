@@ -33,7 +33,7 @@ def send_report_email(subject, message, to_list, files_list):
 
     with open("smtp_config.json", "r") as smtp_config_file:
         smtp_config = json.load(smtp_config_file)
-        print smtp_config
+        #print smtp_config #DEBUG
 
 ##    smtp_config = {
 ##    "host":"smtp.gmail.com",
