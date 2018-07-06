@@ -1,4 +1,4 @@
-<estfeed:data xmlns:estfeed=”http://estfeed.ee/xsd/estfeed-1.0.xsd”>
+<estfeed:data xmlns:estfeed="http://estfeed.ee/xsd/estfeed-1.0.xsd">
 <transactionId>2</transactionId>
 <service>
 <code>getOpenData</code>
