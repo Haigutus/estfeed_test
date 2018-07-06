@@ -1,0 +1,9 @@
+<estfeed:data xmlns:estfeed=”http://estfeed.ee/xsd/estfeed-1.0.xsd”>
+<transactionId>2</transactionId>
+<service>
+<code>getOpenData</code>
+<version>v1</version>
+<kind>weather</kind>
+</service>
+<sourceId>source</sourceId>
+</estfeed:data>

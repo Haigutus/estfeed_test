@@ -1,0 +1,21 @@
+<WeatherForecast xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="WeatherForecast.v1.xsd">
+<PositionPoint>
+<xPosition>58.944</xPosition>
+<yPosition>23.555</yPosition>
+<Name>Haapsalu</Name>
+<Forecast>
+<ValuesInterval>2016-12-29T09:00:00/2017-01-08T06:00:00</ValuesInterval>
+<ForecastValues>
+<Value>2.8</Value>
+<Kind>Temperature</Kind>
+<TimePeriod>2016-12-29T09:00:00/2016-12-29T12:00:00</TimePeriod>
+</ForecastValues>
+<ForecastValues>
+<Value>92</Value>
+<Kind>Humidity</Kind>
+<TimePeriod>2016-12-29T09:00:00/2016-12-29T12:00:00</TimePeriod>
+</ForecastValues>
+</Forecast>
+</PositionPoint>
+</WeatherForecast>

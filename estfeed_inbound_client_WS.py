@@ -33,12 +33,17 @@ def allowed_file(filename):
 
 @app.route('/')
 def instructions():
-    return 'Service to recive EstFeed push files -> /ESTFEED_INBOUND'
+    return '<a href="/ESTFEED_INBOUND">Service to recive EstFeed push files -> /ESTFEED_INBOUND</a>'
 
 @app.route('/ESTFEED_INBOUND', methods=['GET', 'POST'])
 def upload_file():
-    raw_data = request.__dict__
+
     if request.method == 'POST':
+        raw_header_data = request.headers
+        raw_data        = request.data
+        #raw_data = request.__dict__["environ"]["wsgi.input"].read()#request.get_data()#request.input_stream.read(0)
+        send_report_email("New request recieved", "raw header:\n{}\n raw data \n {}".format(raw_header_data, raw_data), ["kristjan.vilgo@elering.ee, georg.rute@elering.ee"],[])
+        #print(raw_data)
         # check if the post request has the file part
         if 'file' not in request.files:
             flash('No file part')
@@ -57,7 +62,7 @@ def upload_file():
 
             file.save(file_full_path)
 
-            send_report_email("New file recieved", "Recived file is attached, raw data: {}".format(raw_data), ["kristjan.vilgo@elering.ee", "georg.rute@elering.ee"],[file_full_path])
+            send_report_email("New file recieved", "Recived file is attached, raw header:\n{}\n raw data \n {}".format(raw_header_data, raw_data), ["kristjan.vilgo@elering.ee, georg.rute@elering.ee"],[file_full_path])
 
 
             return '''File recieved: {}'''.format(filename)
@@ -66,7 +71,7 @@ def upload_file():
     <!doctype html>
     <title>Upload File</title>
     <h1>Upload .xml files only</h1>
-    <form method=post enctype=multipart/form-data>
+    <form method=post enctype=multipart/related>
       <p><input type=file name=file>
          <input type=submit value=Upload>
     </form>
